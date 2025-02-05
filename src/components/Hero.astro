@@ -1,0 +1,37 @@
+---
+import LinkedIn from "./icons/LinkedIn.astro"
+import WhatsApp from "./icons/WhatsApp.astro"
+import Gmail from "./icons/Gmail.astro"
+---
+
+<section id="top" class="container mx-auto py-36 md:max-w-2xl lg:max-w-4xl">
+    <div class="max-w-xl">
+        <img
+          class="rounded-full shadow-xl size-20 mb-3"
+          src="/daan_profile.jpg"
+          alt="Daan Solis"
+        />
+        <span class="font-light text-xl ml-1">Hola, soy</span>
+        <h1 class="font-bold text-6xl ml-0 mb-3">Daan Solís<span class="text-mark-light dark:text-[#557CB5] font-black">.</span></h1>
+        <p class="font-light text-xl ml-1 mb-4">
+          <span class="text-mark-light dark:text-[#557CB5] font-black">Ingeniero mecatrónico y desarrollador web</span> con 3 años de experiencia
+          ubicado en Monterrey, Nuevo León. Enfocado al <span class="text-mark-light dark:text-[#557CB5] font-black">desarrollo web
+          fullstack</span>.
+        </p>
+
+        <nav class="flex gap-4 max-w-lg text-sm">
+            <a href="https://www.linkedin.com/in/daan-%C3%A1ngel-sol%C3%ADs-sisniega-84a1b0204" target="_blank" class="flex items-center justify-center gap-2 px-3 py-1 shadow-md border transition border-gray-300 rounded-md group hover:bg-mark-light hover:text-slate-200 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-mark-light dark:hover:border-mark-light">
+              <LinkedIn class="size-4 group-hover:fill-slate-200 dark:fill-slate-200"/>
+              <span class="mt-1">LinkedIn</span>
+            </a>
+            <a href="https://wa.me/+527821746485" target="_blank" class="flex items-center justify-center gap-2 px-3 py-1 shadow-md border transition border-gray-300 rounded-md group hover:bg-[#2B6D47] hover:text-slate-200 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-[#2B6D47] dark:hover:border-[#2B6D47]">
+              <WhatsApp class="size-4 group-hover:fill-slate-200 dark:fill-slate-200"/>
+              <span class="mt-1">WhatsApp</span>
+            </a>
+            <a href="mailto:daan.solis.sisniega@gmail.com" target="_blank" class="flex items-center justify-center gap-2 px-3 py-1 shadow-md border transition border-gray-300 rounded-md group hover:bg-[#6D502B] hover:text-slate-200 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-[#6D502B] dark:hover:border-[#6D502B]">
+              <Gmail class="size-4 dark:fill-slate-200 group-hover:fill-slate-200"/>
+              <span class="mt-1">Email</span>
+            </a>
+          </nav>
+    </div>
+</section>

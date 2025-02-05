@@ -1,0 +1,56 @@
+---
+import ExperienceModal from "./ExperienceModal.astro";
+
+// Aquí defines las props que esperas recibir
+const { experience } = Astro.props;
+const { id, job, company, start, end, description, button, features } = experience;
+---
+
+<div
+  class="absolute size-3 bg-mark-light rounded-full mt-1.5 -start-1.5 dark:border-gray-900 dark:bg-[#557CB5]"
+>
+</div>
+<div class="flex flex-col md:flex-row md:justify-between">
+  <div class="mb-8">
+    <h2 class="text-2xl font-bold text-mark-light dark:text-white text-pretty">
+      {job}
+    </h2>
+    <h3 class="text-lg font-semibold text-slate-800 dark:text-mark-dark">
+      {company}
+    </h3>
+    <time
+      class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-slate-500"
+      >{start} - {end}</time
+    >
+  </div>
+  <div class="max-w-lg basis-1/2">
+    <p class="mb-4 text-base font-normal text-slate-800 dark:text-slate-300">
+      {description}
+    </p>
+
+    {
+      button && (
+        <button data-modal-target=`experience-modal-${id}` data-modal-toggle=`experience-modal-${id}` class="flex items-center cursor-pointer py-1 pr-3 bg-transparent group font-bold text-mark-light dark:text-mark-dark">
+          Saber más{" "}
+          <svg
+            class="w-3 h-3 ms-2 group-hover:translate-x-1 transition"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"
+            />
+          </svg>
+        </button>
+
+        <ExperienceModal id={id} company={company} features={features} />
+      )
+    }
+  </div>
+</div>

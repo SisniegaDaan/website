@@ -1,0 +1,112 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+import Python from "../icons/Python.astro";
+import Gears from "../icons/Gears.astro";
+import Document from "../icons/Document.astro";
+import Users from "../icons/Users.astro";
+
+const experiences = [
+  {
+    id: 1,
+    job: "Fullstack developer",
+    company: "IH English Academy",
+    start: "Nov 2024",
+    end: "actualmente...",
+    button: true,
+    description:
+      "Trabajo como freelance para una escuela de inglés que tomó " +
+      "la decisión de reformar desde cero su sistema afrontando " +
+      "varios retos desde del diseño de la nueva aplicación como el desarrollo " +
+      "y migración de la nueva base de datos.",
+  },
+  {
+    id: 2,
+    job: "Líder de desarrollo y tecnología",
+    company: "Cénit Startup Studio",
+    start: "Feb 2021",
+    end: "Dic 2024",
+    button: true,
+    description:
+      "Trabajo como freelance para una escuela de inglés que tomó " +
+      "la decisión de reformar desde cero su sistema  afrontando " +
+      "varios retos desde del diseño de la nueva aplicación como el desarrollo " +
+      "y migración de la nueva base de datos.",
+    features: [
+      {
+        id: 1,
+        active: true,
+        name: "Desarrollo e implementación de CRM para registro de ventas",
+        icon: Gears,
+        description:
+          "Se construyó un sistema a la medida del cliente, donde es posible administrar los recursos académicos " +
+          "de una escuela de inglés como cursos, maestros, horarios, clases, asistencias además del registro del " +
+          "catálogo de clientes y alumnos. Se partió de la idea de migrar a un sistema más moderno, cumpliendo las expectativas del negocio " +
+          "y mejorando lo que los usuarios ya conocían",
+      },
+      {
+        id: 2,
+        active: false,
+        name: "Desarrollo Backend para sistema de delivery",
+        icon: Python,
+        description:
+          "Se remodeló y mejoró la estructura del sistema anterior. A su vez, se logró migrar la BD relacional partiendo de datos crudos. " +
+          "Se extrajeron manualmente los datos y relaciones del sistema anterior debido al limitado acceso a la base de datos anterior, por lo que se generó un script en Python para adecuarla" +
+          " al formato de la nueva BD, automatizando, a su vez, el proceso de migración.",
+        tags: ["Python", "Excel", "PgAdmin"],
+      },
+      {
+        id: 3,
+        active: false,
+        name: "Generación de reportes",
+        icon: Document,
+        description:
+          "Se colocaron herramientas dentro del sistema que ayudan a generar vistas simples pero efectivas para la toma de decisiones " +
+          "dentro del negocio como la cantidad cursos y horas impartidas por rangos de fecha, el horario vigente de los maestros, " +
+          "cursos próximos a terminar, reportes de asistencia y mucho más.",
+        tags: ["Nextjs", "Tailwind", "Supabase"],
+      },
+      {
+        id: 4,
+        active: false,
+        name: "Enfoque en múltiples roles",
+        icon: Users,
+        description:
+          "La aplicación está construida pensando en el administrador pero también en el maestro, quien puede " +
+          "facilmente ingresar para poder realizar sus actividades del día a día desde su celular, como la toma de asstencia. " +
+          "también tiene la posibilidad de ver su calendario.",
+        tags: ["Nextjs", "Supabase"],
+      },
+    ],
+  },
+  {
+    id: 3,
+    job: "Practicante de desarrollo web",
+    company: "Multimedios",
+    start: "Feb 2020",
+    end: "Sep 2020",
+    button: false,
+    description:
+      "Trabajo como freelance para una escuela de inglés que tomó " +
+      "la decisión de reformar desde cero su sistema  afrontando " +
+      "varios retos desde del diseño de la nueva aplicación como el desarrollo " +
+      "y migración de la nueva base de datos.",
+  },
+];
+---
+
+<section
+  id="experience"
+  class="container mx-auto md:max-w-2xl lg:max-w-4xl mb-20"
+>
+  <h2 class="font-bold text-center text-3xl mb-10">Experiencia</h2>
+
+  <ol class="relative border-s border-gray-200 dark:border-gray-700">
+    {
+      experiences.map((experience) => (
+        <li class="mb-10 ms-4">
+          <ExperienceItem experience={experience} />
+        </li>
+      ))
+    }
+  </ol>
+</section>

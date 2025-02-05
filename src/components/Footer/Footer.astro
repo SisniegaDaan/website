@@ -1,0 +1,49 @@
+---
+import LinkedIn from "../icons/LinkedIn.astro"
+import WhatsApp from "../icons/WhatsApp.astro"
+import Gmail from "../icons/Gmail.astro"
+import TouchDesktop from "../icons/TouchDesktop.astro"
+import TouchMobile from "../icons/TouchMobile.astro"
+
+---
+
+<footer id="footer" class="container mx-auto md:max-w-2xl lg:max-w-4xl pt-6 pb-20 flex flex-col gap-y-5 items-center justify-center text-center md:flex-row lg:justify-between md:items-center">
+  <div class="md:w-full yext-center md:text-start">
+    <TouchMobile class="w-64 mb-5 lg:hidden lg:mb-0 fill-[#050505] dark:fill-[#F3F4F6] transition" />
+    <TouchDesktop class="max-w-sm hidden lg:block fill-[#050505] dark:fill-[#F3F4F6]" />
+    <p class="text-xs">Daan Solís, {`${new Date().getFullYear()}`}</p>
+  </div>  
+
+    <div class="flex flex-col gap-y-3">
+        <a href="/src/assets/pdf/daan_angel_solis_sisniega_cv.pdf" download="daan_angel_solis_sisniega_cv.pdf">
+            <div class="flex items-center">
+                <span class="relative inline-flex overflow-hidden rounded-md p-[1px] w-full shadow-md">
+                    <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51B4E4_0%,#214055_50%,#51B4E4_100%)]"></span>
+                    <div class="w-full text-center font-bold backdrop-blur-3xl whitespace-nowrap px-3 py-1 bg-white shadow-md rounded-md group hover:bg-mark-light hover:text-slate-200 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-mark-light dark:hover:border-mark-light transition">Descargar CV</div>
+                </span>
+            </div>
+        </a>
+        <nav class="flex gap-4 max-w-lg text-sm">
+            <a href="https://www.linkedin.com/in/daan-%C3%A1ngel-sol%C3%ADs-sisniega-84a1b0204" target="_blank" class="flex items-center justify-center gap-2 px-3 py-1 shadow-md border border-gray-300 rounded-md group hover:bg-mark-light hover:text-slate-200 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-mark-light dark:hover:border-mark-light transition">
+              <LinkedIn class="size-4 group-hover:fill-slate-200 dark:fill-slate-200"/>
+              <span class="mt-1">LinkedIn</span>
+            </a>
+            <a href="https://wa.me/+527821746485" target="_blank" class="flex items-center justify-center gap-2 px-3 py-1 shadow-md border border-gray-300 rounded-md group hover:bg-[#2B6D47] hover:text-slate-200 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-[#2B6D47] dark:hover:border-[#2B6D47] transition">
+              <WhatsApp class="size-4 group-hover:fill-slate-200 dark:fill-slate-200"/>
+              <span class="mt-1">WhatsApp</span>
+            </a>
+            <a href="mailto:daan.solis.sisniega@gmail.com" target="_blank" class="flex items-center justify-center gap-2 px-3 py-1 shadow-md border border-gray-300 rounded-md group hover:bg-[#6D502B] hover:text-slate-200 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-[#6D502B] dark:hover:border-[#6D502B] transition">
+              <Gmail class="size-4 dark:fill-slate-200 group-hover:fill-slate-200"/>
+              <span class="mt-1">Email</span>
+            </a>
+          </nav>
+    </div>
+    
+    <!-- <a href="#_" class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group">
+      <span class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-red-700 rounded group-hover:-mr-4 group-hover:-mt-4">
+          <span class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
+      </span>
+      <span class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-red-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
+      <span class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">Descargar CV</span>
+  </a>  -->
+</footer>
