@@ -10,7 +10,11 @@ import Python from "../icons/Python.astro";
 import Gears from "../icons/Gears.astro";
 import Document from "../icons/Document.astro";
 import Users from "../icons/Users.astro";
-
+import Typescript from "../icons/Typescript.astro";
+import Laravel from "../icons/Laravel.astro";
+import Prisma from "../icons/Prisma.astro";
+import Docker from "../icons/Docker.astro";
+import { imageConfig } from "astro:assets";
 
 const TAGS = {
   REACT: {
@@ -25,7 +29,7 @@ const TAGS = {
   },
   TAILWIND: {
     name: "Tailwindcss",
-    classColor: "text-mark-light bg-[#bcd4fc]",
+    classColor: "text-[#00bcff] bg-[#18242e]",
     icon: Tailwind,
   },
   SUPABASE: {
@@ -37,6 +41,26 @@ const TAGS = {
     name: "PostgreSQL",
     classColor: "bg-gray-200 text-[#30648a]",
     icon: PostgreSQL,
+  },
+  LARAVEL: {
+    name: "Laravel",
+    classColor: "bg-[#f8322d] text-white",
+    icon: Laravel,
+  },
+  TYPSECRIPT: {
+    name: "Typescript",
+    classColor: "bg-[#3078c7] text-white",
+    icon: Typescript,
+  },
+  PRISMA: {
+    name: "Prisma",
+    classColor: "bg-[#434190] text-white",
+    icon: Prisma,
+  },
+  DOCKER: {
+    name: "Docker",
+    classColor: "bg-[#008fe2] text-white",
+    icon: Docker,
   },
 };
 
@@ -56,11 +80,14 @@ const PROJECTS = [
       "las actividades del día a día dentro de una academia de Inglés. " +
       "En este se administran usuarios, clientes, alumnos, maestros, cursos, " +
       "clases, asistencias.",
-    image: {
-      src: "/ih_mockup.webp",
-      alt: "IH Mockup",
-    },
+    images: [
+      {
+        src: "/ih_mockup.webp",
+        alt: "IH Mockup",
+      },
+    ],
     button: true,
+    repository: false,
     features: [
       {
         id: 1,
@@ -71,7 +98,7 @@ const PROJECTS = [
           "Se construyó un sistema a la medida del cliente, donde es posible administrar los recursos académicos " +
           "de una escuela de inglés como cursos, maestros, horarios, clases, asistencias además del registro del " +
           "catálogo de clientes y alumnos. Se partió de la idea de migrar a un sistema más moderno, cumpliendo las expectativas del negocio " +
-          "y mejorando lo que los usuarios ya conocían"
+          "y mejorando lo que los usuarios ya conocían",
       },
       {
         id: 2,
@@ -82,7 +109,7 @@ const PROJECTS = [
           "Se remodeló y mejoró la estructura del sistema anterior. A su vez, se logró migrar la BD relacional partiendo de datos crudos. " +
           "Se extrajeron manualmente los datos y relaciones del sistema anterior debido al limitado acceso a la base de datos anterior, por lo que se generó un script en Python para adecuarla" +
           " al formato de la nueva BD, automatizando, a su vez, el proceso de migración.",
-          tags: ["Python", "Excel", "PgAdmin"]
+        tags: ["Python", "Excel", "PgAdmin"],
       },
       {
         id: 3,
@@ -91,9 +118,9 @@ const PROJECTS = [
         icon: Document,
         description:
           "Se colocaron herramientas dentro del sistema que ayudan a generar vistas simples pero efectivas para la toma de decisiones " +
-          "dentro del negocio como la cantidad cursos y horas impartidas por rangos de fecha, el horario vigente de los maestros, " + 
+          "dentro del negocio como la cantidad cursos y horas impartidas por rangos de fecha, el horario vigente de los maestros, " +
           "cursos próximos a terminar, reportes de asistencia y mucho más.",
-        tags: ["Nextjs", "Tailwind", "Supabase"]
+        tags: ["Nextjs", "Tailwind", "Supabase"],
       },
       {
         id: 4,
@@ -104,51 +131,67 @@ const PROJECTS = [
           "La aplicación está construida pensando en el administrador pero también en el maestro, quien puede " +
           "facilmente ingresar para poder realizar sus actividades del día a día desde su celular, como la toma de asstencia. " +
           "también tiene la posibilidad de ver su calendario.",
-        tags: ["Nextjs", "Supabase"]
+        tags: ["Nextjs", "Supabase"],
       },
     ],
   },
   {
     id: 2,
-    name: "Proyecto de Figma",
-    tags: [
-      TAGS.REACT,
-      TAGS.NEXT,
-      TAGS.TAILWIND,
-      TAGS.SUPABASE,
-      TAGS.POSTGRESQL,
-    ],
+    name: "Punto de Venta para cafetería",
+    tags: [TAGS.TYPSECRIPT, TAGS.REACT, TAGS.NEXT, TAGS.TAILWIND, TAGS.PRISMA],
     description:
       "Este sistema le permite al cliente administrar y ejecutar " +
       "las actividades del día a día dentro de una academia de Inglés. " +
       "En este se administran usuarios, clientes, alumnos, maestros, cursos, " +
       "clases, asistencias.",
-    image: {
-      src: "/ih_mockup.webp",
-      alt: "IH Mockup",
-    },
-    button: false,
+    images: [
+      {
+        src: "/pos_mockup.webp",
+        alt: "POS Mockup",
+      },
+      {
+        src: "/pos_orders.webp",
+        alt: "POS Mockup Orders",
+      },
+      {
+        src: "/pos_products.webp",
+        alt: "Coffee Mockup Products",
+      },
+    ],
+    button: true,
+    repository: false,
+    features: [],
   },
   {
     id: 3,
-    name: "Proyecto de Figma",
-    tags: [
-      TAGS.REACT,
-      TAGS.NEXT,
-      TAGS.TAILWIND,
-      TAGS.SUPABASE,
-      TAGS.POSTGRESQL,
-    ],
+    name: "Red social con Laravel",
+    tags: [TAGS.DOCKER, TAGS.LARAVEL, TAGS.TAILWIND],
     description:
       "Este sistema le permite al cliente administrar y ejecutar " +
       "las actividades del día a día dentro de una academia de Inglés. " +
       "En este se administran usuarios, clientes, alumnos, maestros, cursos, " +
       "clases, asistencias.",
-    image: {
-      src: "/ih_mockup.webp",
-      alt: "IH Mockup",
-    },
-    button: false,
+    images: [
+      {
+        src: "/devstagram_mockup.webp",
+        alt: "Devstagram Mockup",
+      },
+      {
+        src: "/devstagram_post.webp",
+        alt: "Devstagram Post Mockup",
+      },
+      {
+        src: "/devstagram_upload.webp",
+        alt: "Devstagram Upload Mockup",
+      },
+      {
+        src: "/devstagram_signin.webp",
+        alt: "Devstagram SignIn Mockup",
+      },
+    ],
+    button: true,
+    repository: true,
+    features: [],
   },
 ];
 ---

@@ -14,8 +14,12 @@ import LightMode from "../components/icons/LightMode.astro";
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Desarrollador fullstack ubicado en Monterrey. Especializado en Nextjs, React, Node, Laravel y Odoo." />
+    <meta
+      name="description"
+      content="Desarrollador fullstack ubicado en Monterrey. Especializado en Nextjs, React, Node, Laravel y Odoo."
+    />
     <title>Daan Solís - Desarrollador & Programador web</title>
   </head>
 
@@ -27,10 +31,10 @@ import LightMode from "../components/icons/LightMode.astro";
     >
     </div>
 
-    <header class="w-full px-4 py-4 fixed top-0 z-10">
-      <nav class="flex justify-center md:justify-end">
+    <header class="w-full py-4 fixed top-0 z-10">
+      <nav class="flex justify-center md:justify-end mx-4">
         <ul
-          class="flex items-center gap-1 md:gap-3 text-sm font-semibold bg-white dark:bg-slate-800 shadow-lg bg-opacity-50 backdrop-blur-lg rounded-md px-4 py-2"
+          class="flex items-center gap-1 md:gap-3 text-sm font-semibold bg-white dark:bg-slate-800 dark:bg-opacity-50 shadow-lg bg-opacity-50 backdrop-blur-lg rounded-md px-4 py-2"
         >
           <li>
             <a
@@ -80,11 +84,9 @@ import LightMode from "../components/icons/LightMode.astro";
     <Footer />
 
     <script src="/src/scripts/themeToggle.js" defer></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/flowbite@3.1.1/dist/flowbite.min.js"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.1/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <script src="/src/scripts/initSwipers.js"></script>
   </body>
 </html>
 
@@ -124,4 +126,5 @@ import LightMode from "../components/icons/LightMode.astro";
     justify-content: center;
     scroll-behavior: smooth;
   }
+
 </style>

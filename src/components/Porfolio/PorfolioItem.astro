@@ -1,24 +1,21 @@
 ---
 import Tag from "../ui/Tag.astro";
 import PorfolioModal from "./PorfolioModal.astro";
+import PorfolioSwiper from "./PorfolioSwiper.astro";
 const { project } = Astro.props;
-const { id, name, tags, description, image, button, features } = project;
+const { id, name, tags, description, images, button, features } = project;
 ---
 
 <article class="mb-10 md:flex md:justify-between">
-  <div class="w-full h-full md:w-1/2 md:pr-10">
-    <img
-      class="rounded-md shadow-lg w-full h-full"
-      src={image.src}
-      alt={image.alt}
-    />
+  <div class=`w-full h-full md:w-1/2 md:pr-10`>
+    <PorfolioSwiper id={id} images={images} />
   </div>
-
+  
   <div class="max-w-lg md:basis-1/2">
     <h3 class="font-bold text-2xl mt-5 mb-3 md:mt-0">
       {name}
     </h3>
-    <ul class="flex gap-1 gap-y-2 flex-wrap mb-3">
+    <ul class="flex gap-1 gap-y-2 flex-wrap mb-3 max-w-sm">
       {tags.map((tag:object) => <Tag tag={tag} />)}
     </ul>
     <p class="mb-3 text-pretty text-slate-800 dark:text-slate-300">
