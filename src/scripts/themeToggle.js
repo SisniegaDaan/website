@@ -1,4 +1,5 @@
 const toggleDarkMode = () => {
+  console.log("CAMBIANDO MODO")
     const html = document.documentElement;
     const currentTheme = html.classList.contains('dark') ? 'light' : 'dark';
   
