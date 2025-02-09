@@ -7,16 +7,21 @@ const toggleDarkMode = () => {
     html.classList.toggle('dark', currentTheme === 'dark');
     // Guarda la preferencia en localStorage
     localStorage.setItem('theme', currentTheme);
-  };
+};
   
-  const setInitialTheme = () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  };
-  
-  // Configura el tema al cargar la página
-  setInitialTheme();
+const setInitialTheme = () => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  const button = document.querySelector("#my-toggle-button");
+  button.addEventListener('click', toggleDarkMode);
+})
+
+// Configura el tema al cargar la página
+setInitialTheme();
