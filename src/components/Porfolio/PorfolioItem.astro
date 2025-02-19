@@ -3,8 +3,10 @@ import Tag from "../ui/Tag.astro";
 import PorfolioModal from "./PorfolioModal.astro";
 import PorfolioSwiper from "./PorfolioSwiper.astro";
 import PorfolioGallery from "./PorfolioGallery.astro";
+import Github from '../icons/Github.astro';
+
 const { project } = Astro.props;
-const { id, name, tags, description, images, button, features } = project;
+const { id, name, tags, description, images, button, repository, features } = project;
 ---
 
 <article class="mb-10 md:flex md:justify-between">
@@ -15,6 +17,11 @@ const { id, name, tags, description, images, button, features } = project;
   <div class="max-w-lg md:basis-1/2">
     <h3 class="font-bold text-2xl mt-5 mb-3 md:mt-0">
       {name}
+      {repository && (
+        <a href=`${repository}` class="ml-2">
+          <Github class="size-6 hover:scale-110 transition inline fill-black dark:fill-white" />
+        </a>
+      )}
     </h3>
     <ul class="flex gap-1 gap-y-2 flex-wrap mb-3 max-w-sm">
       {tags.map((tag:object) => <Tag tag={tag} />)}
@@ -25,7 +32,7 @@ const { id, name, tags, description, images, button, features } = project;
 
     {
       button && (
-        <button data-modal-target=`porfolio-modal-${id}` data-modal-toggle=`porfolio-modal-${id}` class="flex items-center cursor-pointer py-1 pr-3 bg-transparent group font-bold text-mark-light dark:text-mark-dark">
+        <button trigger-modal id=`trigger-porfolio-${id}` class="flex items-center cursor-pointer py-1 pr-3 bg-transparent group font-bold text-mark-light dark:text-mark-dark">
           Saber más{" "}
           <svg
             class="w-3 h-3 ms-2 group-hover:translate-x-1 transition"
@@ -44,7 +51,7 @@ const { id, name, tags, description, images, button, features } = project;
           </svg>
         </button>
 
-        <PorfolioModal id={id} name={name} features={features} /> 
+        <PorfolioModal id={id} name={name} images={images} features={features} /> 
       )
     }
   </div>

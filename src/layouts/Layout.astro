@@ -25,7 +25,7 @@ import LightMode from "../components/icons/LightMode.astro";
 
   <body class="relative dark:text-gray-100">
     <div
-      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-screen transition
+      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full transition
       bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]
       dark:bg-neutral-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
     >
@@ -84,9 +84,12 @@ import LightMode from "../components/icons/LightMode.astro";
     <Footer />
 
     <script src="/src/scripts/themeToggle.js"></script>
+    <script src="/src/scripts/downAnimation.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.1/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
     <script src="/src/scripts/initSwipers.js"></script>
+    <script src="/src/scripts/modalTransitions.js"></script>
+
     <!-- <script src="/src/scripts/showPorfolioGallery.js"></script>  -->
   </body>
 </html>
@@ -126,6 +129,10 @@ import LightMode from "../components/icons/LightMode.astro";
     flex-direction: column;
     justify-content: center;
     scroll-behavior: smooth;
+  }
+
+  p > strong {
+    color: blue
   }
 
 </style>

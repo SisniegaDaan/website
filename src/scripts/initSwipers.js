@@ -12,7 +12,7 @@ var swiper = new Swiper(".mySwiper1", {
   effect: "creative",
   pagination: {
     el: '.swiper-pagination',
-    clickable: true
+    clickable: false
   },
   autoplay: {
     delay: 3500,
@@ -36,7 +36,7 @@ var swiper2 = new Swiper(".mySwiper2", {
   effect: "creative",
   pagination: {
     el: '.swiper-pagination',
-    clickable: true
+    clickable: false
   },
   autoplay: {
     delay: 3500,
@@ -134,14 +134,39 @@ var gallerySwiper3 = new Swiper(".myGallerySwiper3", {
 });
 
 // Actualizando los swipers de galerías
-const mySwiper1 = document.querySelector(".mySwiper1");
-mySwiper1.addEventListener('click', function(){
-  setTimeout(() => {
-    gallerySwiper1.update();
-  }, "300");
-})
+//const mySwiper1 = document.querySelector(".mySwiper1");
+//mySwiper1.addEventListener('click', function(){
+//  setTimeout(() => {
+//    gallerySwiper1.update();
+//  }, "300");
+//})
+const buttonProject1 = document.getElementById("trigger-porfolio-1");
+buttonProject1.addEventListener('click', () => {
+    setTimeout(() => {
+      gallerySwiper1.update();
+      gallerySwiper1.slideTo(0);
+    }, "250")
+  });
 
-const project1Images = document.querySelectorAll(".img-project-1");
+const buttonProject2 = document.getElementById("trigger-porfolio-2");
+buttonProject2.addEventListener('click', () => {
+    setTimeout(() => {
+      gallerySwiper2.update();
+      gallerySwiper2.slideTo(0);
+    }, "250")
+  });
+
+const buttonProject3 = document.getElementById("trigger-porfolio-3");
+buttonProject3.addEventListener('click', () => {
+    setTimeout(() => {
+      gallerySwiper3.update();
+      gallerySwiper3.slideTo(0);
+    }, "250")
+  });
+
+
+
+/* const project1Images = document.querySelectorAll("button-project-3");
 project1Images.forEach((image) => {
   image.addEventListener('click', () => {
     setTimeout(() => {
@@ -169,4 +194,4 @@ project3Images.forEach((image) => {
       gallerySwiper3.slideTo((+image.getAttribute("id").split("-")[1]) - 1);
     }, "100")
   })
-})
+}) */

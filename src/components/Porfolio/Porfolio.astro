@@ -15,7 +15,12 @@ import Typescript from "../icons/Typescript.astro";
 import Laravel from "../icons/Laravel.astro";
 import Prisma from "../icons/Prisma.astro";
 import Docker from "../icons/Docker.astro";
+import Database from "../icons/Database.astro";
+import Frontend from "../icons/Frontend.astro";
+import Table from "../icons/Table.astro";
+
 import { imageConfig } from "astro:assets";
+import { transitionEnabledOnThisPage } from "astro:transitions/client";
 
 const TAGS = {
   REACT: {
@@ -63,6 +68,11 @@ const TAGS = {
     classColor: "bg-[#008fe2] text-white",
     icon: Docker,
   },
+  PYTHON: {
+    name: "Python",
+    classColor: "bg-[#114673] text-[#E4C657] fill-[#E4C657]",
+    icon: Python
+  }
 };
 
 const PROJECTS = [
@@ -75,14 +85,22 @@ const PROJECTS = [
       TAGS.TAILWIND,
       TAGS.SUPABASE,
       TAGS.POSTGRESQL,
+      TAGS.PYTHON
     ],
     description:
       "Este sistema le permite al cliente administrar y ejecutar " +
       "las actividades del día a día dentro de una academia de Inglés. " +
-      "En este se administran usuarios, clientes, alumnos, maestros, cursos, " +
+      "En este se gestionan usuarios, clientes, alumnos, maestros, cursos, " +
       "clases, asistencias.",
     images: [
       {
+        id: 1,
+        src: "/ih_mockup.webp",
+        alt: "IH Mockup",
+        dataSrc: "/ih_mockup.webp"
+      },
+      {
+        id: 2,
         src: "/ih_mockup.webp",
         alt: "IH Mockup",
         dataSrc: "/ih_mockup.webp"
@@ -91,50 +109,37 @@ const PROJECTS = [
     button: true,
     repository: false,
     features: [
-      {
+    {
         id: 1,
         active: true,
-        name: "Sistema ERP para gestión académica",
-        icon: Gears,
+        name: "DB & Backend",
+        icon: Database,
         description:
-          "Se construyó un sistema a la medida del cliente, donde es posible administrar los recursos académicos " +
-          "de una escuela de inglés como cursos, maestros, horarios, clases, asistencias además del registro del " +
-          "catálogo de clientes y alumnos. Se partió de la idea de migrar a un sistema más moderno, cumpliendo las expectativas del negocio " +
-          "y mejorando lo que los usuarios ya conocían",
+          "La BD y el backend fueron creados y desplegados mediante Supabase. Se replicó y mejoró el ERD del antiguo sistema. Se utilizaron " +
+          "métodos de transformación de datos mediante scripts de Python para la migración de datos históricos y queries en SQL para " +
+          "completar campos y relaciones entre tablas."
       },
       {
         id: 2,
         active: false,
-        name: "Migración y modernización de sistema",
-        icon: Python,
+        name: "Frontend",
+        icon: Frontend,
         description:
-          "Se remodeló y mejoró la estructura del sistema anterior. A su vez, se logró migrar la BD relacional partiendo de datos crudos. " +
-          "Se extrajeron manualmente los datos y relaciones del sistema anterior debido al limitado acceso a la base de datos anterior, por lo que se generó un script en Python para adecuarla" +
-          " al formato de la nueva BD, automatizando, a su vez, el proceso de migración.",
+          "Construido con React, Nextjs, Tailwind y el uso de librerías de soporte. Los datos mostrados son consumidos mediante la API de Supabase y " +
+          "las rutas son protegidas mediante roles de usuario. Diseño basado en frames de Figma.",
         tags: ["Python", "Excel", "PgAdmin"],
       },
       {
         id: 3,
         active: false,
-        name: "Generación de reportes",
-        icon: Document,
+        name: "Funcionalidades clave",
+        icon: Gears,
         description:
-          "Se colocaron herramientas dentro del sistema que ayudan a generar vistas simples pero efectivas para la toma de decisiones " +
-          "dentro del negocio como la cantidad cursos y horas impartidas por rangos de fecha, el horario vigente de los maestros, " +
-          "cursos próximos a terminar, reportes de asistencia y mucho más.",
+          "Sistema para la gestión de datos maestros (clientes, alumnos, maestros, etc.). Organización de grupos, cursos, niveles y materiales. Generación de cursos y " +
+          "creación automática del calendario de clases, así como cambios de frecuencia. Generación automática de reportes y diplomas. Registro de asistencias por clase. " +
+          "Calendarios para maestros y administradores.",
         tags: ["Nextjs", "Tailwind", "Supabase"],
-      },
-      {
-        id: 4,
-        active: false,
-        name: "Enfoque en múltiples roles",
-        icon: Users,
-        description:
-          "La aplicación está construida pensando en el administrador pero también en el maestro, quien puede " +
-          "facilmente ingresar para poder realizar sus actividades del día a día desde su celular, como la toma de asstencia. " +
-          "también tiene la posibilidad de ver su calendario.",
-        tags: ["Nextjs", "Supabase"],
-      },
+      }
     ],
   },
   {
@@ -142,10 +147,10 @@ const PROJECTS = [
     name: "Punto de Venta para cafetería",
     tags: [TAGS.TYPSECRIPT, TAGS.REACT, TAGS.NEXT, TAGS.TAILWIND, TAGS.PRISMA],
     description:
-      "Este sistema le permite al cliente administrar y ejecutar " +
-      "las actividades del día a día dentro de una academia de Inglés. " +
-      "En este se administran usuarios, clientes, alumnos, maestros, cursos, " +
-      "clases, asistencias.",
+      "Herramienta enfocada para una red local de restaurante o cafetería. " +
+      "Le permite presentar a sus clientes un menú de selección para ordenar. " +
+      "También es posible gestionar las órdenes en cocina, mostrar pedidos listos " +
+      "y gestionar los productos mostrados.",
     images: [
       {
         id: 1,
@@ -169,18 +174,47 @@ const PROJECTS = [
       },
     ],
     button: true,
-    repository: false,
-    features: [],
+    repository: "https://github.com/SisniegaDaan/pos-coffee.git",
+    features: [
+    {
+        id: 1,
+        active: false,
+        name: "Base de datos",
+        icon: Database,
+        description:
+          "La base de datos usada para este proyecto está desplegada en Render y conectada remotamente. Actualmente, para esta demo, " +
+          "está bajo plan gratuito por lo que es posible que al momento de ingresar, debas autorizar tu ingreso al sitio y/o el servicio de la BD haya caducado.",
+      },  
+      {
+        id: 2,
+        active: false,
+        name: "Backend",
+        icon: Gears,
+        description:
+          "El ORM usado para este proyecto es Prisma, junto con sus servicios de Prisma-Client para el fetching a la base de datos, " +
+          "Prisma Migrate para la generación de tablas y Prisma Studio para el cliente de la BD. Todo dentro de Next.js. Se implementaron server " +
+          "actions para almaceamiento de órdenes y productos."
+      },
+      {
+        id: 3,
+        active: false,
+        name: "Frontend",
+        icon: Frontend,
+        description:
+          "Se utilizó el store de zustand para el manejo de estado de las ordenes. Los formularios se lograron validar con zod " +
+          "tanto en cliente como en servidor. También se implementó el servicio de Cloudinary para poder trabajar con las imágenes " +
+          "de los productos y almacenarlas. Los estilos se construyeron mediante Tailwind." 
+      }
+  ],
   },
   {
     id: 3,
     name: "Red social con Laravel",
     tags: [TAGS.DOCKER, TAGS.LARAVEL, TAGS.TAILWIND],
     description:
-      "Este sistema le permite al cliente administrar y ejecutar " +
-      "las actividades del día a día dentro de una academia de Inglés. " +
-      "En este se administran usuarios, clientes, alumnos, maestros, cursos, " +
-      "clases, asistencias.",
+      "Proyecto que cubre las funciones más usadas de una red social " +
+      "como crear tu perfil, subir publicaciones, seguir personas, comentar, dar likes, " +
+      "ver tu feed, ¡y más!",
     images: [
       {
         id: 1,
@@ -208,8 +242,48 @@ const PROJECTS = [
       },
     ],
     button: true,
-    repository: true,
-    features: [],
+    repository: "https://github.com/SisniegaDaan/devstagram.git",
+    features: [
+    {
+        id: 1,
+        active: false,
+        name: "Base de datos",
+        icon: Database,
+        description:
+          "Con la ayuda de Docker se generó todo el ambiente  para el desarrollo de esta aplicación, dentro de este, se incluía una base de datos " +
+          "MySQL. El proyecto completo fue construido con Laravel siguiento el patrón MVC." 
+      },
+      {
+        id: 2,
+        active: false,
+        name: "Modelos",
+        icon: Table,
+        description:
+          "Se llevó un control sobre las tablas mediante migraciones con el CLI de Laravel (artisan). Se utilizó la autenticación que ofrece Laravel más algunos ajustes en " +
+          "'users'. Se modelaron tanto las tablas, como las relaciones entre ellas, mediante el ORM Eloquent, como la relación Post-User, Post-Likes, Post-Comments, User-Followers." 
+      },
+      {
+        id: 3,
+        active: false,
+        name: "Rutas y Controladores",
+        icon: Gears,
+        description:
+          "Se crearon rutas controladas para cada acción dentro de la app como realizar Login, Crear Cuenta, Likear Posts, Crear Publicación, etc., junto a toda la lógica como " +
+          "validaciones, hasheo de passwords, etc., y a su vez, también métodos especificos de consulta de vistas como ver el feed " +
+          "o posts específicos, siguiendo la documentación de Laravel."
+      },
+      {
+        id: 4,
+        active: false,
+        name: "Vistas",
+        icon: Frontend,
+        description:
+          "Se estableció el Layout de la página y componentes y vistas con blade para mostrar la información proporcionada por los controladores y métodos de consulta de Eloquent. " +
+          "Se implementó la librería Livewire para la interacción con el botón de like y diferentes formularios con subida de archivos. Las diferentes directivas de Laravel para agregar lógica y seguridad " +
+          "a las vistas. En cuanto a estilos se usó Tailwind."
+      },
+
+    ],
   },
 ];
 ---

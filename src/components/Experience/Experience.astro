@@ -4,6 +4,12 @@ import Python from "../icons/Python.astro";
 import Gears from "../icons/Gears.astro";
 import Document from "../icons/Document.astro";
 import Users from "../icons/Users.astro";
+import DatabaseM from "../icons/DatabaseM.astro";
+import Rocket from "../icons/Rocket.astro";
+import Record from "../icons/Record.astro";
+import Dashboard from "../icons/Dashboard.astro";
+import Code from "../icons/Code.astro";
+import Check from "../icons/Check.astro";
 
 const experiences = [
   {
@@ -15,9 +21,64 @@ const experiences = [
     button: true,
     description:
       "Trabajo como freelance para una escuela de inglés desarrollando un sistema ERP académico integral. " +
-      "El proyecto involucra modernizar sus sistemas de gestión, incluyendo el diseño de arquitectura, " +
+      "El proyecto involucra modernizar su sistema de gestión, incluyendo el diseño, arquitectura, " +
       "migración de datos históricos, desarrollo de módulos, despliegue en producción e implementación " +
-      "con capacitación a usuarios."
+      "con capacitación a usuarios.",
+    features: [
+    {
+        id: 1,
+        active: true,
+        name: "Modernización de sistema",
+        icon: Code,
+        description: "Desarrollo y modernización del software académico de la institución. El propósito ha sido reemplazar el sistema antiguo, " + 
+        "cumpliendo con los estándares actuales de la operación y mejorando la áreas de oportunidad del mismo, el cual se mantuvo en operación por 20 años."
+      },
+      {
+        id: 1,
+        active: true,
+        name: "Migración de datos históricos",
+        icon: DatabaseM,
+        description: "Construcción de solución estratégica de migración al no contar con el acceso directo a la antigua BD, la cual involucró " +
+        "exportación manual de datos, desarrollo de scripts de transformación con Python de los datos exportados y consultas SQL para reestablecer la relaciones perdidas entre tablas " +
+        "como grupos-alumnos o maestros-cursos, reestableciendolas mediante tablas de asistencia y clases."
+      },
+      {
+        id: 2,
+        active: true,
+        name: "Implementación de la herramienta",
+        icon: Rocket,
+        description: "Activación y capacitación a los usuarios para la implementación de " +
+        "la nueva herramienta. A su vez, la implementación de roles y permisos permitió que tanto administradores como maestros " + 
+        "pudieran ver y manejar la información que les correspondía, protegiendo la información."
+      },
+      {
+        id: 3,
+        active: true,
+        name: "Automatización de tareas",
+        icon: Gears,
+        description: "Automatización de tareas repetitivas, como la edición exhaustiva de clases al cambiar la frecuencia, horario o maestro " +
+        "de un curso o la generación de reportes y certificados. Estas fueron solucionadas mediante herramientas incialmente configurables " +
+        "por el usuario, para obtener la solución esperada."
+      },
+      {
+        id: 4,
+        active: true,
+        name: "Registros de actividad",
+        icon: Record,
+        description: "Generación de logs de actividad para una capa más de claridad y seguridad al sistema establecida a las tablas y campos sensibles " +
+        "establecidos. Esta actividad se registra al momento de crear o editar los registros y campos vigilados. En el reporte se incluye, el usuario involucrado, el tipo de acción y los campos modificados junto con sus valores tanto antiguos como nuevos."
+      },
+      {
+        id: 5,
+        active: true,
+        name: "Generación de dashboard de reportes",
+        icon: Dashboard,
+        description: "Actualmente se está trabajando en desarrollar vistas que le permitan al usuario obtener " + 
+        "insights en el menor tiempo posible y a su vez que sea posible crear filtros personalizados para encontrar información " +
+        "puntual." 
+      }
+    ]
+
   },
   {
     id: 2,
@@ -27,55 +88,129 @@ const experiences = [
     end: "Dic 2024",
     button: true,
     description:
-      "Fui parte de una startup encargada de impulsar múltiples iniciativas comerciales " + 
-      "y pionero en la formación del depto. de IT en la misma. Diseñé, desarrollé e implementé software y " +
-      "procesos para más de cuatro iniciativas impactando positivamente en áreas administrativas, operativas y comerciales. " +
+      "Fui parte de una startup encargada de impulsar múltiples iniciativas comerciales. Diseñé, desarrollé e implementé software y " +
+      "procesos para más de cuatro iniciativas impactando positivamente en áreas administrativas, logísticas y comerciales. " +
       "Construí desde páginas web hasta sistemas internos para la gestión de cobranza y seguimiento de clientes.",
     features: [
       {
         id: 1,
         active: true,
-        name: "Desarrollo e implementación de CRM para registro de ventas",
-        icon: Gears,
+        name: "Desarrollo e implementación de sistema comercial - logístico",
+        icon: Check,
         description:
-          "Se construyó un sistema a la medida del cliente, donde es posible administrar los recursos académicos " +
-          "de una escuela de inglés como cursos, maestros, horarios, clases, asistencias además del registro del " +
-          "catálogo de clientes y alumnos. Se partió de la idea de migrar a un sistema más moderno, cumpliendo las expectativas del negocio " +
-          "y mejorando lo que los usuarios ya conocían",
-      },
+          "Desarrollo de módulos operativos en Odoo, dedicados a una iniciativa de ventas por catálogo (Pophaus). " +
+          "El primero, ayudó a agilizar y automatizar las tareas comerciales, como levantamiento de pedidos, generación de reportes de venta " + 
+          "personalizados, programa de referidos y puntos, venta por ciclos y listas de precios, alta de contratos, etc. Por otro lado, el segundo " +
+          "contribuyó a facilitar el proceso de inventarios, picking y logística de evíos."
+        },
       {
         id: 2,
         active: false,
-        name: "Desarrollo Backend para sistema de delivery",
-        icon: Python,
+        name: "Gestión de ventas a consignación",
+        icon: Check,
         description:
-          "Se remodeló y mejoró la estructura del sistema anterior. A su vez, se logró migrar la BD relacional partiendo de datos crudos. " +
-          "Se extrajeron manualmente los datos y relaciones del sistema anterior debido al limitado acceso a la base de datos anterior, por lo que se generó un script en Python para adecuarla" +
-          " al formato de la nueva BD, automatizando, a su vez, el proceso de migración.",
-        tags: ["Python", "Excel", "PgAdmin"],
+          "Desarrollo de módulo operativo en Odoo para el uso diario del equipo de vendedores de una iniciativa de ventas en ruta (Pulga Express). " +
+          "Permitía gestionar inventarios por cliente (para el tracking de productos a consigna) y de esta forma poder cobrar por la diferencia de inventario. " + 
+          "Permitía gestionar inventarios por vendedor (para el retorno de mercancía). Tambipen, era posible dar de alta clientes y su ubicación mediante la geolocalización del vendedor. " +
+          "Todo desde su celular."
       },
       {
         id: 3,
         active: false,
-        name: "x",
-        icon: Document,
+        name: "Backend para App de envíos",
+        icon: Check,
         description:
-          "Se colocaron herramientas dentro del sistema que ayudan a generar vistas simples pero efectivas para la toma de decisiones " +
-          "dentro del negocio como la cantidad cursos y horas impartidas por rangos de fecha, el horario vigente de los maestros, " +
-          "cursos próximos a terminar, reportes de asistencia y mucho más.",
-        tags: ["Nextjs", "Tailwind", "Supabase"],
+          "Diseño del proyecto y sus procesos, hasta el plan de implementación e integración con el módulo operativo de Pophaus. " +
+          "Se modelaron clases como rutas, visitas, repartidores y se dejó a manos del equipo de logística para su operación continua. Este proyecto tenía una API y daba servicio al " +
+          "cliente móvil del repartidor.",
       },
       {
         id: 4,
         active: false,
-        name: "Enfoque en múltiples roles",
-        icon: Users,
+        name: "Gestión de cobrazna",
+        icon: Check,
         description:
-          "La aplicación está construida pensando en el administrador pero también en el maestro, quien puede " +
-          "facilmente ingresar para poder realizar sus actividades del día a día desde su celular, como la toma de asstencia. " +
-          "también tiene la posibilidad de ver su calendario.",
-        tags: ["Nextjs", "Supabase"],
+          "Desarrollo e implementación de módulo gestor de créditos y cobranza con Odoo, " +
+          "mediante el registro de facturas de pedidos entregados (integración con app de envíos), el registro de pagos abonados y la conciliación " + 
+          "contable automática. A su vez, el proyecto incluía un panel de administración.",
       },
+      {
+        id: 5,
+        active: false,
+        name: "Integración con Conekta",
+        icon: Check,
+        description:
+          'Apertura de canal de pagos mediante el servicio de Oxxo "Conekta", para nuestros clientes (Pophaus), mediante la configuración de webhooks. ' +
+          "Esto les permitía liquidar sus pedidos o abonar a su adeudo antes de su entrega. Para este canal, se desarolló un microservicio de conciliación automática de pagos y facturas " +
+          "para la actualización de saldos.",
+      },
+      {
+        id: 6,
+        active: false,
+        name: "Backend para tiendas en línea",
+        icon: Check,
+        description:
+          "Desarrollo de APIs para dos de nuestras iniciativas (Pophaus y Sharebox). Permitían la consulta de productos, autenticación y gestión de " +
+          "pedidos. Se manejó un gran volumen de productos el cual se tuvo que someter a transformación de datos para su comercialización web. Se desarrolló filtrado " +
+          "personalizado por palabra, categorías, subcategorías, tags y precios",
+      },
+      {
+        id: 7,
+        active: false,
+        name: "Generador de loterías",
+        icon: Check,
+        description:
+          "Desarrollo de script en Python para la reproducción de tableros de lotería personalizados, para eventos sociales (Pophaus). " +
+          "Se permitió así, ahorrar costos y tiempos de diseño. Se logró desarrollar la generación de patrones de imágenes únicos.",
+      },
+      {
+        id: 8,
+        active: false,
+        name: "Generador de catálogo de productos",
+        icon: Check,
+        description:
+          "Desarrollo de script en Ptyhon para la automatización de catálogos/revistas de productos en formato PDF para móvil y PC. " +
+          "El producto podía variar según los parámetros ingresados como tamaño, número de productos por página, path de las imágenes, etc.",
+      },
+      {
+        id: 9,
+        active: false,
+        name: "Detector de fraudes con análisis de datos",
+        icon: Check,
+        description:
+          "Desarrollo en Python con Jupyter Notebooks para la detección de anomalías en los reportes de venta y reportes de inventario de los vendedores (Pulga Express). " +
+          "Mostraba los casos en los que un vendedor cancelaba más de lo que vendía, ya que eran indicios de robo de producto. Se hacía una comparación por vendedor y clientes " +
+          "utilizando Pandas y Numpy",
+      },
+      {
+        id: 10,
+        active: false,
+        name: "Implementación de Punto de Venta con Wansoft y Odoo",
+        icon: Check,
+        description:
+          "Implementación de Punto de Venta y sistema de gestión para restaurante (Barbacha Ahogada). Permitía la gestión de ventas, inventario y facturación. " +
+          "Se habilitó la administración de platillos, combos, modificadores y materias primas y se tenían integradas las apps de delivery principales. " + 
+          "Se implementó con Wansoft y posteriormente se migró a Odoo.",
+      },
+      {
+        id: 11,
+        active: false,
+        name: "Implementación de módulo de Producción para alimentos",
+        icon: Check,
+        description:
+          "Análisis e implementación operativa de los módulos de Producción, Calidad, Inventario y Compras. Estableciendo procesos, normas y puntos de control sobre la producción " + 
+          "desde Odoo. Se realizó una recopilación exhaustiva de datos maestros como " + 
+          "proveedores, materias primas, rendimientos, recetas, métodos de costeo (...) para que la operación fuese alimentada.",
+      },
+      {
+        id: 12,
+        active: false,
+        name: "Desarrollo visual de marca",
+        icon: Check,
+        description:
+          "Desarrollo visual de nueva iniciativa (Casa Ahorro); pautando estilos, logotipos, fuentes, colores y plantillas/formatos para presencia digital e impresa. " +
+          "Se contribuyó a la identidad visual de la marca y al local de venta. Finalicé, a su vez, con la implementación de su punto de venta.",
+      }
     ],
   },
   {

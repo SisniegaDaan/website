@@ -10,14 +10,14 @@ const { id, images } = Astro.props;
 <div class=`mySwiper${id} swiper w-full h-full rounded-md relative`>
     <div class=`swiper-wrapper`>
         { images.map((image:any) => (
-            <div data-modal-target=`porfolio-gallery-${id}` data-modal-toggle=`porfolio-gallery-${id}` class="swiper-slide rounded-md">
+            <div data-modal-target=`porfolio-gallery-${id}` data-modal-toggle=`porfolio-gallery-${id}` class="swiper-slide rounded-md  cursor-default">
                 <img id=`${id}-${image.id}` class=`img-project-${id}` src=`${image.src}` alt=`${image.alt}` data-src=`${image.dataSrc}` />
             </div>
         ))}
     </div>
 </div>
 
-<PorfolioGallery id={id} gallery={images}  />
+<!-- <PorfolioGallery id={id} gallery={images}  /> -->
 
 
       
