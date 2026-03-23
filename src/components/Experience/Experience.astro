@@ -13,11 +13,65 @@ import Check from "../icons/Check.astro";
 
 const experiences = [
   {
+    id: 0,
+    job: "Software Engineer | Tech Lead",
+    company: "Boson TI",
+    start: "Mar 2025",
+    end: "actualmente...",
+    button: true,
+    description:
+      "Lidero el desarrollo de soluciones robustas en el ecosistema .NET, especializándome en arquitecturas distribuidas y modernización de infraestructura orientadas a telemetría, a su vez, desarrollo con tecnologías frontend mediante frameworks de JS como Vue.",
+    features: [
+    {
+        id: 1,
+        active: true,
+        name: "Arquitecturas de Mensajería",
+        icon: Code,
+        description: "Implementé sistemas escalables con RabbitMQ y MassTransit para el desacoplamiento de servicios críticos."
+      },
+      {
+        id: 1,
+        active: true,
+        name: "Sistema de notificaciones para telemetría",
+        icon: DatabaseM,
+        description: "Implementé un sistema capaz de procesar y alertar eventos de telemetría de acuerdo a las necesidades de cada cliente. Utilizando canales push con SignalR y de correo electrónico"
+      },
+      {
+        id: 2,
+        active: true,
+        name: "Modernización de Despliegue",
+        icon: Rocket,
+        description: "Optimicé el ciclo de vida de aplicaciones mediante Docker, gestionando entornos tanto en Azure como en IIS."
+      },
+      {
+        id: 3,
+        active: true,
+        name: "Reestructuración de proyectos Legacy",
+        icon: Gears,
+        description: "Lideré el desacoplamiento de sistemas con protocolos de comunicación propia y de alta dependencia, migrándolos con éxito a una arquitectura basada en eventos con RabbitMQ y MassTransit."
+      },
+      {
+        id: 4,
+        active: true,
+        name: "Optimización de Datos",
+        icon: Record,
+        description: "Mejora de rendimiento y consistencia en SQL Server y MongoDB."
+      },
+      {
+        id: 5,
+        active: true,
+        name: "Liderazgo Ágil",
+        icon: Dashboard,
+        description: "Impulsé la transición del equipo hacia Scrum, mejorando la planeación y entrega de valor constante." 
+      }
+    ]
+},
+  {
     id: 1,
     job: "Fullstack developer",
     company: "IH English Academy",
     start: "Nov 2024",
-    end: "actualmente...",
+    end: "Feb 2025",
     button: true,
     description:
       "Trabajo como freelance para una escuela de inglés desarrollando un sistema ERP académico integral. " +
@@ -82,7 +136,7 @@ const experiences = [
   },
   {
     id: 2,
-    job: "Líder de desarrollo y tecnología",
+    job: "Fullstack developer | Tech Lead",
     company: "Cénit Startup Studio",
     start: "Feb 2021",
     end: "Dic 2024",
