@@ -22,50 +22,56 @@ const experiences = [
     description:
       "Lidero el desarrollo de soluciones robustas en el ecosistema .NET, especializándome en arquitecturas distribuidas y modernización de infraestructura orientadas a telemetría, a su vez, desarrollo con tecnologías frontend mediante frameworks de JS como Vue.",
     features: [
-    {
+      {
         id: 1,
         active: true,
-        name: "Arquitecturas de Mensajería",
+        name: "Arquitectura Orientada a Eventos",
         icon: Code,
-        description: "Implementé sistemas escalables con RabbitMQ y MassTransit para el desacoplamiento de servicios críticos."
+        description:
+          "Implementé sistemas escalables con RabbitMQ y MassTransit para el desacoplamiento de servicios críticos para permitir su escalabilidad.",
       },
       {
         id: 1,
         active: true,
         name: "Sistema de notificaciones para telemetría",
         icon: DatabaseM,
-        description: "Implementé un sistema capaz de procesar y alertar eventos de telemetría de acuerdo a las necesidades de cada cliente. Utilizando canales push con SignalR y de correo electrónico"
+        description:
+          "Implementé un sistema capaz de procesar y alertar eventos de telemetría de acuerdo a las necesidades de cada cliente. Utilizando canales push con SignalR y de correos con SMTP y el SDK de Telegram.",
       },
       {
         id: 2,
         active: true,
         name: "Modernización de Despliegue",
         icon: Rocket,
-        description: "Optimicé el ciclo de vida de aplicaciones mediante Docker, gestionando entornos tanto en Azure como en IIS."
+        description:
+          "Optimicé el ciclo de vida de aplicaciones mediante Docker, gestionando entornos tanto en Azure como en IIS.",
       },
       {
         id: 3,
         active: true,
         name: "Reestructuración de proyectos Legacy",
         icon: Gears,
-        description: "Lideré el desacoplamiento de sistemas con protocolos de comunicación propia y de alta dependencia, migrándolos con éxito a una arquitectura basada en eventos con RabbitMQ y MassTransit."
+        description:
+          "Lideré el desacoplamiento de sistemas con protocolos de comunicación propia y de alta dependencia, migrándolos con éxito a una arquitectura basada en eventos con RabbitMQ y MassTransit.",
       },
       {
         id: 4,
         active: true,
-        name: "Optimización de Datos",
+        name: "Optimización de Algoritmos",
         icon: Record,
-        description: "Mejora de rendimiento y consistencia en SQL Server y MongoDB."
+        description:
+          "Mejora de rendimiento en Web Services con altos costos de procesamiento.",
       },
       {
         id: 5,
         active: true,
         name: "Liderazgo Ágil",
         icon: Dashboard,
-        description: "Impulsé la transición del equipo hacia Scrum, mejorando la planeación y entrega de valor constante." 
-      }
-    ]
-},
+        description:
+          "Impulsé la transición del equipo hacia Scrum, mejorando la planeación y entrega de valor constante.",
+      },
+    ],
+  },
   {
     id: 1,
     job: "Fullstack developer",
@@ -79,60 +85,73 @@ const experiences = [
       "migración de datos históricos, desarrollo de módulos, despliegue en producción e implementación " +
       "con capacitación a usuarios.",
     features: [
-    {
-        id: 1,
-        active: true,
-        name: "Modernización de sistema",
-        icon: Code,
-        description: "Desarrollo y modernización del software académico de la institución. El propósito ha sido reemplazar el sistema antiguo, " + 
-        "cumpliendo con los estándares actuales de la operación y mejorando la áreas de oportunidad del mismo, el cual se mantuvo en operación por 20 años."
-      },
       {
         id: 1,
         active: true,
-        name: "Migración de datos históricos",
-        icon: DatabaseM,
-        description: "Construcción de solución estratégica de migración al no contar con el acceso directo a la antigua BD, la cual involucró " +
-        "exportación manual de datos, desarrollo de scripts de transformación con Python de los datos exportados y consultas SQL para reestablecer la relaciones perdidas entre tablas " +
-        "como grupos-alumnos o maestros-cursos, reestableciendolas mediante tablas de asistencia y clases."
+        name: "Diseño y arquitectura",
+        icon: Code,
+        description:
+          "Definición de la hoja de ruta técnica y la estructura del sistema.",
       },
       {
         id: 2,
         active: true,
-        name: "Implementación de la herramienta",
-        icon: Rocket,
-        description: "Activación y capacitación a los usuarios para la implementación de " +
-        "la nueva herramienta. A su vez, la implementación de roles y permisos permitió que tanto administradores como maestros " + 
-        "pudieran ver y manejar la información que les correspondía, protegiendo la información."
+        name: "Migración de datos",
+        icon: DatabaseM,
+        description:
+          "Migración exitosa de datos históricos desde sistemas legados." +
+          "Construcción de solución estratégica de migración al no contar con el acceso directo a la antigua BD, la cual involucró " +
+          "exportación manual de datos, desarrollo de scripts de transformación con Python de los datos exportados y consultas SQL para reestablecer la relaciones perdidas entre tablas " +
+          "como grupos-alumnos o maestros-cursos, reestableciendolas mediante tablas de asistencia y clases.",
       },
       {
         id: 3,
         active: true,
-        name: "Automatización de tareas",
-        icon: Gears,
-        description: "Automatización de tareas repetitivas, como la edición exhaustiva de clases al cambiar la frecuencia, horario o maestro " +
-        "de un curso o la generación de reportes y certificados. Estas fueron solucionadas mediante herramientas incialmente configurables " +
-        "por el usuario, para obtener la solución esperada."
+        name: "Desarrollo de Módulos",
+        icon: DatabaseM,
+        description:
+          "Construcción de módulos funcionales clave adaptados a las necesidades académicas como gestión de datos maestros como clientes, maestros, programación de clases, cursos, materiales, calificaciones, generación de certificados, etc.",
       },
       {
         id: 4,
         active: true,
-        name: "Registros de actividad",
-        icon: Record,
-        description: "Generación de logs de actividad para una capa más de claridad y seguridad al sistema establecida a las tablas y campos sensibles " +
-        "establecidos. Esta actividad se registra al momento de crear o editar los registros y campos vigilados. En el reporte se incluye, el usuario involucrado, el tipo de acción y los campos modificados junto con sus valores tanto antiguos como nuevos."
+        name: "Implementación de la herramienta",
+        icon: Rocket,
+        description:
+          "Activación y capacitación a los usuarios para la implementación de " +
+          "la nueva herramienta. A su vez, la implementación de roles y permisos permitió que tanto administradores como maestros " +
+          "pudieran ver y manejar la información que les correspondía, protegiendo la información.",
       },
       {
         id: 5,
         active: true,
+        name: "Automatización de tareas",
+        icon: Gears,
+        description:
+          "Automatización de tareas repetitivas, como la edición exhaustiva de clases al cambiar la frecuencia, horario o maestro " +
+          "de un curso o la generación de reportes y certificados. Estas fueron solucionadas mediante herramientas incialmente configurables " +
+          "por el usuario, para obtener la solución esperada.",
+      },
+      {
+        id: 5,
+        active: true,
+        name: "Registros de actividad",
+        icon: Record,
+        description:
+          "Generación de logs de actividad para una capa más de claridad y seguridad al sistema establecida a las tablas y campos sensibles " +
+          "establecidos. Esta actividad se registra al momento de crear o editar los registros y campos vigilados. En el reporte se incluye, el usuario involucrado, el tipo de acción y los campos modificados junto con sus valores tanto antiguos como nuevos.",
+      },
+      {
+        id: 7,
+        active: true,
         name: "Generación de dashboard de reportes",
         icon: Dashboard,
-        description: "Actualmente se está trabajando en desarrollar vistas que le permitan al usuario obtener " + 
-        "insights en el menor tiempo posible y a su vez que sea posible crear filtros personalizados para encontrar información " +
-        "puntual." 
-      }
-    ]
-
+        description:
+          "Actualmente se está trabajando en desarrollar vistas que le permitan al usuario obtener " +
+          "insights en el menor tiempo posible y a su vez que sea posible crear filtros personalizados para encontrar información " +
+          "puntual.",
+      },
+    ],
   },
   {
     id: 2,
@@ -142,129 +161,73 @@ const experiences = [
     end: "Dic 2024",
     button: true,
     description:
-      "Fui parte de una startup encargada de impulsar múltiples iniciativas comerciales. Diseñé, desarrollé e implementé software y " +
-      "procesos para más de cuatro iniciativas impactando positivamente en áreas administrativas, logísticas y comerciales. " +
-      "Construí desde páginas web hasta sistemas internos para la gestión de cobranza y seguimiento de clientes.",
+      "Lideré el ciclo de vida completo de más de 10 iniciativas tecnológicas para diversas unidades de negocio, diseñando arquitectura, procesos y software que optimizaron las áreas administrativa, logística y comercial.",
     features: [
       {
         id: 1,
         active: true,
-        name: "Desarrollo e implementación de sistema comercial - logístico",
+        name: "Optimización de Operaciones ERP (Odoo)",
         icon: Check,
         description:
-          "Desarrollo de módulos operativos en Odoo, dedicados a una iniciativa de ventas por catálogo (Pophaus). " +
-          "El primero, ayudó a agilizar y automatizar las tareas comerciales, como levantamiento de pedidos, generación de reportes de venta " + 
-          "personalizados, programa de referidos y puntos, venta por ciclos y listas de precios, alta de contratos, etc. Por otro lado, el segundo " +
-          "contribuyó a facilitar el proceso de inventarios, picking y logística de evíos."
-        },
+          "Desarrollé módulos a medida para ventas por ciclo, programas de lealtad y automatización logística (picking/envíos), agilizando la operación comercial y el control de inventarios.",
+      },
       {
         id: 2,
         active: false,
-        name: "Gestión de ventas a consignación",
+        name: "Gestión de Ventas en Ruta con Geolocalización",
         icon: Check,
         description:
-          "Desarrollo de módulo operativo en Odoo para el uso diario del equipo de vendedores de una iniciativa de ventas en ruta (Pulga Express). " +
-          "Permitía gestionar inventarios por cliente (para el tracking de productos a consigna) y de esta forma poder cobrar por la diferencia de inventario. " + 
-          "Permitía gestionar inventarios por vendedor (para el retorno de mercancía). Tambipen, era posible dar de alta clientes y su ubicación mediante la geolocalización del vendedor. " +
-          "Todo desde su celular."
+          "Diseñé una solución móvil para ventas a consignación que integraba geolocalización para el alta de clientes y tracking de inventario en tiempo real por vendedor, permitiendo cobros precisos por diferencias de stock.",
       },
       {
         id: 3,
         active: false,
-        name: "Backend para App de envíos",
+        name: "Arquitectura de Backend y Microservicios",
         icon: Check,
         description:
-          "Diseño del proyecto y sus procesos, hasta el plan de implementación e integración con el módulo operativo de Pophaus. " +
-          "Se modelaron clases como rutas, visitas, repartidores y se dejó a manos del equipo de logística para su operación continua. Este proyecto tenía una API y daba servicio al " +
-          "cliente móvil del repartidor.",
+          "Desarrollé APIs robustas para múltiples plataformas de E-commerce y una App de envíos, implementando además un microservicio de conciliación automática con Conekta (Oxxo Pay) que automatizó el flujo contable de facturas y pagos.",
       },
       {
         id: 4,
         active: false,
-        name: "Gestión de cobrazna",
+        name: "Fintech y Gestión de Cobranza",
         icon: Check,
         description:
-          "Desarrollo e implementación de módulo gestor de créditos y cobranza con Odoo, " +
-          "mediante el registro de facturas de pedidos entregados (integración con app de envíos), el registro de pagos abonados y la conciliación " + 
-          "contable automática. A su vez, el proyecto incluía un panel de administración.",
+          "Implementé un sistema integral de créditos y cobranza que conectaba la entrega física (vía App de envíos) con la conciliación contable automática en el ERP.",
       },
       {
         id: 5,
         active: false,
-        name: "Integración con Conekta",
+        name: "Data Science y Detección de Fraude",
         icon: Check,
         description:
-          'Apertura de canal de pagos mediante el servicio de Oxxo "Conekta", para nuestros clientes (Pophaus), mediante la configuración de webhooks. ' +
-          "Esto les permitía liquidar sus pedidos o abonar a su adeudo antes de su entrega. Para este canal, se desarolló un microservicio de conciliación automática de pagos y facturas " +
-          "para la actualización de saldos.",
+          "Desarrollé modelos de análisis de datos con Python (Pandas, NumPy) y Jupyter Notebooks para identificar anomalías en reportes de inventario, reduciendo significativamente las pérdidas por robo de producto.",
       },
       {
         id: 6,
         active: false,
-        name: "Backend para tiendas en línea",
+        name: "Digitalización de Procesos Industriales",
         icon: Check,
         description:
-          "Desarrollo de APIs para dos de nuestras iniciativas (Pophaus y Sharebox). Permitían la consulta de productos, autenticación y gestión de " +
-          "pedidos. Se manejó un gran volumen de productos el cual se tuvo que someter a transformación de datos para su comercialización web. Se desarrolló filtrado " +
-          "personalizado por palabra, categorías, subcategorías, tags y precios",
+          "Lideré la implementación operativa del módulo de producción y calidad para el sector alimentario, estableciendo el control total de materias primas, costos de recetas y puntos de control de calidad.",
       },
       {
         id: 7,
         active: false,
-        name: "Generador de loterías",
+        name: "Automatización con Python",
         icon: Check,
         description:
-          "Desarrollo de script en Python para la reproducción de tableros de lotería personalizados, para eventos sociales (Pophaus). " +
-          "Se permitió así, ahorrar costos y tiempos de diseño. Se logró desarrollar la generación de patrones de imágenes únicos.",
+          "Creé herramientas de automatización para la generación de catálogos dinámicos y tableros personalizados, reduciendo drásticamente los costos y tiempos de diseño gráfico.",
       },
       {
         id: 8,
-        active: false,
-        name: "Generador de catálogo de productos",
-        icon: Check,
-        description:
-          "Desarrollo de script en Ptyhon para la automatización de catálogos/revistas de productos en formato PDF para móvil y PC. " +
-          "El producto podía variar según los parámetros ingresados como tamaño, número de productos por página, path de las imágenes, etc.",
-      },
-      {
-        id: 9,
-        active: false,
-        name: "Detector de fraudes con análisis de datos",
-        icon: Check,
-        description:
-          "Desarrollo en Python con Jupyter Notebooks para la detección de anomalías en los reportes de venta y reportes de inventario de los vendedores (Pulga Express). " +
-          "Mostraba los casos en los que un vendedor cancelaba más de lo que vendía, ya que eran indicios de robo de producto. Se hacía una comparación por vendedor y clientes " +
-          "utilizando Pandas y Numpy",
-      },
-      {
-        id: 10,
-        active: false,
-        name: "Implementación de Punto de Venta con Wansoft y Odoo",
-        icon: Check,
-        description:
-          "Implementación de Punto de Venta y sistema de gestión para restaurante (Barbacha Ahogada). Permitía la gestión de ventas, inventario y facturación. " +
-          "Se habilitó la administración de platillos, combos, modificadores y materias primas y se tenían integradas las apps de delivery principales. " + 
-          "Se implementó con Wansoft y posteriormente se migró a Odoo.",
-      },
-      {
-        id: 11,
-        active: false,
-        name: "Implementación de módulo de Producción para alimentos",
-        icon: Check,
-        description:
-          "Análisis e implementación operativa de los módulos de Producción, Calidad, Inventario y Compras. Estableciendo procesos, normas y puntos de control sobre la producción " + 
-          "desde Odoo. Se realizó una recopilación exhaustiva de datos maestros como " + 
-          "proveedores, materias primas, rendimientos, recetas, métodos de costeo (...) para que la operación fuese alimentada.",
-      },
-      {
-        id: 12,
         active: false,
         name: "Desarrollo visual de marca",
         icon: Check,
         description:
           "Desarrollo visual de nueva iniciativa (Casa Ahorro); pautando estilos, logotipos, fuentes, colores y plantillas/formatos para presencia digital e impresa. " +
           "Se contribuyó a la identidad visual de la marca y al local de venta. Finalicé, a su vez, con la implementación de su punto de venta.",
-      }
+      },
     ],
   },
   {
@@ -275,9 +238,9 @@ const experiences = [
     end: "Sep 2020",
     button: false,
     description:
-      "Realicé mantenimiento y manejo de bases de datos relacionales, incluyendo creación de consultas SQL, " + 
-      "limpieza y análisis de datos para reportes corporativos. También fui parte del desarrollo de un sistema interno " + 
-      "para el control y registro de clientes corporativos. Aprendí a trabajar cooperativamente en un equipo de desarrollo."
+      "Realicé mantenimiento y manejo de bases de datos relacionales, incluyendo creación de consultas SQL, " +
+      "limpieza y análisis de datos para reportes corporativos. También fui parte del desarrollo de un sistema interno " +
+      "para el control y registro de clientes corporativos. Aprendí a trabajar cooperativamente en un equipo de desarrollo.",
   },
 ];
 ---
