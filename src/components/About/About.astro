@@ -1,10 +1,14 @@
 ---
 import Contact from "./Contact.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section
   id="about" class="container mx-auto md:max-w-2xl lg:max-w-4xl mb-20">
-  <h2 class="font-bold text-center text-3xl mb-10">Sobre mi</h2>
+  <h2 class="font-bold text-center text-3xl mb-10">{t('about.title')}</h2>
   <div class="md:flex items-center gap-10">
     
     <div class="flex justify-center items-center mb-10 md:mb-0">
@@ -18,20 +22,17 @@ import Contact from "./Contact.astro";
     </div>
     <div class="text-start md:max-w-sm lg:max-w-xl text-slate-800 dark:text-slate-300">
       <p>
-        Originario de Poza Rica, Veracruz 🇲🇽, quien descubrió su vocación
-        durante sus años universitarios, aprendiendo a hacer <b class="text-mark-light dark:text-mark-dark">programas con C#</b>
-        para hallar soluciones a problemas de <b class="text-mark-light dark:text-mark-dark">ingeniería</b> e integrando
-        software con mecánica para resolver retos de <b class="text-mark-light dark:text-mark-dark">robótica</b>. Al desarrollar mi
-        interés por la rama del software hice clic con el <b class="text-mark-light dark:text-mark-dark">desarrollo web</b>.
+        {t('about.p1.1')}<b class="text-mark-light dark:text-mark-dark">{t('about.p1.2')}</b>
+        {t('about.p1.3')}<b class="text-mark-light dark:text-mark-dark">{t('about.p1.4')}</b>
+        {t('about.p1.5')}<b class="text-mark-light dark:text-mark-dark">{t('about.p1.6')}</b>
+        {t('about.p1.7')}<b class="text-mark-light dark:text-mark-dark">{t('about.p1.8')}</b>{t('about.p1.9')}
       </p>
       <p>
-        Mi <b class="text-mark-light dark:text-mark-dark">objetivo profesional</b> a cinco años es adquirir la experiencia y habilidades 
-        necesarias para liderar, desarrollar y ejecutar proyectos de cualquier escala, 
-        ya sea en startups o multinacionales.
+        {t('about.p2.1')}<b class="text-mark-light dark:text-mark-dark">{t('about.p2.2')}</b> 
+        {t('about.p2.3')}
       </p>
       <p>
-        Entre otras cosas me apasiona la música electrónica y el DJing, el
-        diseño, la serigrafía y descubrir lugares nuevos por todo el mundo.
+        {t('about.p3')}
       </p>
     </div>
   </div>

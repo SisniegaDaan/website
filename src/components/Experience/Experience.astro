@@ -10,8 +10,12 @@ import Record from "../icons/Record.astro";
 import Dashboard from "../icons/Dashboard.astro";
 import Code from "../icons/Code.astro";
 import Check from "../icons/Check.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
-const experiences = [
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const experiencesEs = [
   {
     id: 0,
     job: "Software Engineer | Tech Lead",
@@ -243,13 +247,248 @@ const experiences = [
       "para el control y registro de clientes corporativos. Aprendí a trabajar cooperativamente en un equipo de desarrollo.",
   },
 ];
+
+const experiencesEn = [
+  {
+    id: 0,
+    job: "Software Engineer | Tech Lead",
+    company: "Boson TI",
+    start: "Mar 2025",
+    end: "present...",
+    button: true,
+    description:
+      "I lead the development of robust solutions in the .NET ecosystem, specializing in distributed architectures and infrastructure modernization focused on telemetry. Simultaneously, I develop with frontend technologies using JS frameworks like Vue.",
+    features: [
+      {
+        id: 1,
+        active: true,
+        name: "Event-Driven Architecture",
+        icon: Code,
+        description:
+          "Implemented scalable systems with RabbitMQ and MassTransit for decoupling critical services to allow for their scalability.",
+      },
+      {
+        id: 1,
+        active: true,
+        name: "Notification System for Telemetry",
+        icon: DatabaseM,
+        description:
+          "Implemented a system capable of processing and alerting telemetry events according to the needs of each client. Utilizing push channels with SignalR and emails with SMTP and the Telegram SDK.",
+      },
+      {
+        id: 2,
+        active: true,
+        name: "Deployment Modernization",
+        icon: Rocket,
+        description:
+          "Optimized the application lifecycle using Docker, managing environments in both Azure and IIS.",
+      },
+      {
+        id: 3,
+        active: true,
+        name: "Legacy Project Restructuring",
+        icon: Gears,
+        description:
+          "Led the decoupling of systems with proprietary communication protocols and high dependency, successfully migrating them to an event-based architecture with RabbitMQ and MassTransit.",
+      },
+      {
+        id: 4,
+        active: true,
+        name: "Algorithm Optimization",
+        icon: Record,
+        description:
+          "Performance improvement in Web Services with high processing costs.",
+      },
+      {
+        id: 5,
+        active: true,
+        name: "Agile Leadership",
+        icon: Dashboard,
+        description:
+          "Drove the team's transition to Scrum, improving planning and continuous value delivery.",
+      },
+    ],
+  },
+  {
+    id: 1,
+    job: "Fullstack developer",
+    company: "IH English Academy",
+    start: "Nov 2024",
+    end: "Feb 2025",
+    button: true,
+    description:
+      "Working as a freelancer for an English academy developing a comprehensive academic ERP system. " +
+      "The project involves modernizing their management system, including design, architecture, " +
+      "historical data migration, module development, production deployment, and implementation " +
+      "with user training.",
+    features: [
+      {
+        id: 1,
+        active: true,
+        name: "Design and Architecture",
+        icon: Code,
+        description:
+          "Definition of the technical roadmap and the system structure.",
+      },
+      {
+        id: 2,
+        active: true,
+        name: "Data Migration",
+        icon: DatabaseM,
+        description:
+          "Successful migration of historical data from legacy systems. " +
+          "Construction of a strategic migration solution due to the lack of direct access to the old DB, which involved " +
+          "manual data export, development of Python transformation scripts for the exported data, and SQL queries to re-establish lost relationships between tables " +
+          "such as groups-students or teachers-courses, restoring them through attendance and class tables.",
+      },
+      {
+        id: 3,
+        active: true,
+        name: "Module Development",
+        icon: DatabaseM,
+        description:
+          "Construction of key functional modules adapted to academic needs such as master data management like clients, teachers, class scheduling, courses, materials, grades, certificate generation, etc.",
+      },
+      {
+        id: 4,
+        active: true,
+        name: "Tool Implementation",
+        icon: Rocket,
+        description:
+          "Activation and training for users to implement " +
+          "the new tool. At the same time, the implementation of roles and permissions allowed both administrators and teachers " +
+          "to view and manage the information that corresponded to them, protecting the data.",
+      },
+      {
+        id: 5,
+        active: true,
+        name: "Task Automation",
+        icon: Gears,
+        description:
+          "Automation of repetitive tasks, such as exhaustive editing of classes when changing the frequency, schedule, or teacher " +
+          "of a course or the generation of reports and certificates. These were solved through initially configurable tools " +
+          "by the user, to obtain the expected solution.",
+      },
+      {
+        id: 5,
+        active: true,
+        name: "Activity Logs",
+        icon: Record,
+        description:
+          "Generation of activity logs for an extra layer of clarity and security to the system applied to sensitive tables and fields " +
+          "established. This activity is recorded at the time of creating or editing the monitored records and fields. The report includes the user involved, the type of action, and the modified fields along with their old and new values.",
+      },
+      {
+        id: 7,
+        active: true,
+        name: "Report Dashboard Generation",
+        icon: Dashboard,
+        description:
+          "Currently working on developing views that allow the user to obtain " +
+          "insights in the shortest possible time and at the same time making it possible to create custom filters to find specific " +
+          "information.",
+      },
+    ],
+  },
+  {
+    id: 2,
+    job: "Fullstack developer | Tech Lead",
+    company: "Cénit Startup Studio",
+    start: "Feb 2021",
+    end: "Dec 2024",
+    button: true,
+    description:
+      "Led the full lifecycle of more than 10 technological initiatives for various business units, designing architecture, processes, and software that optimized administrative, logistical, and commercial areas.",
+    features: [
+      {
+        id: 1,
+        active: true,
+        name: "ERP Operations Optimization (Odoo)",
+        icon: Check,
+        description:
+          "Developed custom modules for cycle sales, loyalty programs, and logistical automation (picking/shipping), streamlining commercial operations and inventory control.",
+      },
+      {
+        id: 2,
+        active: false,
+        name: "Route Sales Management with Geolocation",
+        icon: Check,
+        description:
+          "Designed a mobile solution for consignment sales that integrated geolocation for client registration and real-time inventory tracking per seller, allowing accurate billing for stock differences.",
+      },
+      {
+        id: 3,
+        active: false,
+        name: "Backend Architecture and Microservices",
+        icon: Check,
+        description:
+          "Developed robust APIs for multiple E-commerce platforms and a Delivery App, also implementing an automatic reconciliation microservice with Conekta (Oxxo Pay) that automated the accounting flow of invoices and payments.",
+      },
+      {
+        id: 4,
+        active: false,
+        name: "Fintech and Collection Management",
+        icon: Check,
+        description:
+          "Implemented a comprehensive credit and collection system that connected physical delivery (via Delivery App) with automatic accounting reconciliation in the ERP.",
+      },
+      {
+        id: 5,
+        active: false,
+        name: "Data Science and Fraud Detection",
+        icon: Check,
+        description:
+          "Developed data analysis models with Python (Pandas, NumPy) and Jupyter Notebooks to identify anomalies in inventory reports, significantly reducing losses from product theft.",
+      },
+      {
+        id: 6,
+        active: false,
+        name: "Digitalization of Industrial Processes",
+        icon: Check,
+        description:
+          "Led the operational implementation of the production and quality module for the food sector, establishing full control of raw materials, recipe costs, and quality control points.",
+      },
+      {
+        id: 7,
+        active: false,
+        name: "Automation with Python",
+        icon: Check,
+        description:
+          "Created automation tools for the generation of dynamic catalogs and custom dashboards, drastically reducing graphic design costs and times.",
+      },
+      {
+        id: 8,
+        active: false,
+        name: "Visual Brand Development",
+        icon: Check,
+        description:
+          "Visual development of a new initiative (Casa Ahorro); setting guidelines for styles, logos, fonts, colors, and templates/formats for digital and print presence. " +
+          "Contributed to the brand's visual identity and sales location. Successfully concluded with the implementation of its point of sale.",
+      },
+    ],
+  },
+  {
+    id: 3,
+    job: "Web Development Intern",
+    company: "Multimedios",
+    start: "Feb 2020",
+    end: "Sep 2020",
+    button: false,
+    description:
+      "Performed maintenance and management of relational databases, including the creation of SQL queries, " +
+      "cleaning, and data analysis for corporate reports. Also part of the development of an internal system " +
+      "for the control and registration of corporate clients. Learned to work cooperatively in a development team.",
+  },
+];
+
+const experiences = lang === 'es' ? experiencesEs : experiencesEn;
 ---
 
 <section
   id="experience"
   class="container mx-auto md:max-w-2xl lg:max-w-4xl mb-20"
 >
-  <h2 class="font-bold text-center text-3xl mb-10">Experiencia</h2>
+  <h2 class="font-bold text-center text-3xl mb-10">{t('experience.title')}</h2>
 
   <ol class="relative border-s border-gray-200 dark:border-gray-700">
     {

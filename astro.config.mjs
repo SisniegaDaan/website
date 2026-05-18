@@ -9,6 +9,10 @@ import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
+  i18n: {
+    defaultLocale: 'es',
+    locales: ['es', 'en'],
+  },
   integrations: [tailwind(), react()],
   devToolbar: {
     enabled: false

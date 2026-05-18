@@ -18,10 +18,31 @@ const setInitialTheme = () => {
   }
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  const button = document.querySelector("#my-toggle-button");
-  button.addEventListener('click', toggleDarkMode);
-})
+document.addEventListener('astro:page-load', () => {
+  // Configurar botones de tema (tanto desktop como mobile)
+  const buttons = document.querySelectorAll(".my-toggle-button");
+  buttons.forEach(button => {
+    button.addEventListener('click', toggleDarkMode);
+  });
 
-// Configura el tema al cargar la página
-setInitialTheme();
+  // Configurar dropdown menu de mobile
+  const mobileMenuButton = document.getElementById('mobileMenuButton');
+  const mobileDropdown = document.getElementById('mobileDropdown');
+  
+  if (mobileMenuButton && mobileDropdown) {
+    mobileMenuButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileDropdown.classList.toggle('hidden');
+    });
+    
+    // Cerrar el menu si se hace clic afuera
+    document.addEventListener('click', (e) => {
+      if (!mobileDropdown.contains(e.target)) {
+        mobileDropdown.classList.add('hidden');
+      }
+    });
+  }
+
+  // Configura el tema al cargar la página
+  setInitialTheme();
+});

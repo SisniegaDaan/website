@@ -18,6 +18,10 @@ import Docker from "../icons/Docker.astro";
 import Database from "../icons/Database.astro";
 import Frontend from "../icons/Frontend.astro";
 import Table from "../icons/Table.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 import { imageConfig } from "astro:assets";
 import { transitionEnabledOnThisPage } from "astro:transitions/client";
@@ -75,7 +79,7 @@ const TAGS = {
   }
 };
 
-const PROJECTS = [
+const PROJECTS_ES = [
   {
     id: 1,
     name: "Sistema de gestión académico",
@@ -286,13 +290,227 @@ const PROJECTS = [
     ],
   },
 ];
+
+const PROJECTS_EN = [
+  {
+    id: 1,
+    name: "Academic Management System",
+    tags: [
+      TAGS.REACT,
+      TAGS.NEXT,
+      TAGS.TAILWIND,
+      TAGS.SUPABASE,
+      TAGS.POSTGRESQL,
+      TAGS.PYTHON
+    ],
+    description:
+      "This system allows the client to manage and execute " +
+      "the day-to-day activities within an English academy. " +
+      "It manages users, clients, students, teachers, courses, " +
+      "classes, and attendance.",
+    images: [
+      {
+        id: 1,
+        src: "/ih_mockup.webp",
+        alt: "IH Mockup",
+        dataSrc: "/ih_mockup.webp"
+      },
+      {
+        id: 2,
+        src: "/ih_mockup.webp",
+        alt: "IH Mockup",
+        dataSrc: "/ih_mockup.webp"
+      },
+    ],
+    button: true,
+    repository: false,
+    features: [
+    {
+        id: 1,
+        active: true,
+        name: "DB & Backend",
+        icon: Database,
+        description:
+          "The DB and backend were created and deployed using Supabase. The old system's ERD was replicated and improved. " +
+          "Data transformation methods using Python scripts were used for historical data migration and SQL queries to " +
+          "complete fields and relationships between tables."
+      },
+      {
+        id: 2,
+        active: false,
+        name: "Frontend",
+        icon: Frontend,
+        description:
+          "Built with React, Nextjs, Tailwind, and support libraries. The displayed data is consumed via the Supabase API and " +
+          "routes are protected by user roles. Design based on Figma frames.",
+        tags: ["Python", "Excel", "PgAdmin"],
+      },
+      {
+        id: 3,
+        active: false,
+        name: "Key Features",
+        icon: Gears,
+        description:
+          "System for master data management (clients, students, teachers, etc.). Organization of groups, courses, levels, and materials. Generation of courses and " +
+          "automatic creation of the class schedule, as well as frequency changes. Automatic generation of reports and diplomas. Attendance registration per class. " +
+          "Calendars for teachers and administrators.",
+        tags: ["Nextjs", "Tailwind", "Supabase"],
+      }
+    ],
+  },
+  {
+    id: 2,
+    name: "Point of Sale for Coffee Shop",
+    tags: [TAGS.TYPSECRIPT, TAGS.REACT, TAGS.NEXT, TAGS.TAILWIND, TAGS.PRISMA],
+    description:
+      "Tool focused on a local restaurant or coffee shop network. " +
+      "Allows presenting clients with a selection menu to order. " +
+      "It's also possible to manage kitchen orders, show ready orders " +
+      "and manage displayed products.",
+    images: [
+      {
+        id: 1,
+        src: "/pos_mockup.webp",
+        alt: "POS Mockup",
+        dataSrc: "/pos_mockup.webp"
+
+      },
+      {
+        id: 2,
+        src: "/pos_orders.webp",
+        alt: "POS Mockup Orders",
+        dataSrc: "/pos_orders.webp"
+
+      },
+      {
+        id: 3,
+        src: "/pos_products.webp",
+        alt: "Coffee Mockup Products",
+        dataSrc: "/pos_products.webp"
+      },
+    ],
+    button: true,
+    repository: "https://github.com/SisniegaDaan/pos-coffee.git",
+    features: [
+    {
+        id: 1,
+        active: false,
+        name: "Database",
+        icon: Database,
+        description:
+          "The database used for this project is deployed on Render and remotely connected. Currently, for this demo, " +
+          "it's on a free plan, so it's possible that when you enter, you might need to authorize your access or the DB service might have expired.",
+      },  
+      {
+        id: 2,
+        active: false,
+        name: "Backend",
+        icon: Gears,
+        description:
+          "The ORM used for this project is Prisma, along with Prisma-Client services for DB fetching, " +
+          "Prisma Migrate for table generation, and Prisma Studio for the DB client. All within Next.js. Server actions were implemented " +
+          "for storing orders and products."
+      },
+      {
+        id: 3,
+        active: false,
+        name: "Frontend",
+        icon: Frontend,
+        description:
+          "Zustand store was used for order state management. Forms were successfully validated with zod " +
+          "both on client and server. The Cloudinary service was also implemented to work with and store " +
+          "product images. Styles were built using Tailwind." 
+      }
+  ],
+  },
+  {
+    id: 3,
+    name: "Social Network with Laravel",
+    tags: [TAGS.DOCKER, TAGS.LARAVEL, TAGS.TAILWIND],
+    description:
+      "Project that covers the most used functions of a social network " +
+      "such as creating a profile, uploading posts, following people, commenting, liking, " +
+      "viewing your feed, and more!",
+    images: [
+      {
+        id: 1,
+        src: "/devstagram_mockup.webp",
+        alt: "Devstagram Mockup",
+        dataSrc: "/devstagram_mockup.webp"
+      },
+      {
+        id: 2,
+        src: "/devstagram_post.webp",
+        alt: "Devstagram Post Mockup",
+        dataSrc: "/devstagram_post.webp"
+      },
+      {
+        id: 3,
+        src: "/devstagram_upload.webp",
+        alt: "Devstagram Upload Mockup",
+        dataSrc: "/devstagram_upload.webp"
+      },
+      {
+        id: 4,
+        src: "/devstagram_signin.webp",
+        alt: "Devstagram SignIn Mockup",
+        dataSrc: "/devstagram_signin.webp"
+      },
+    ],
+    button: true,
+    repository: "https://github.com/SisniegaDaan/devstagram.git",
+    features: [
+    {
+        id: 1,
+        active: false,
+        name: "Database",
+        icon: Database,
+        description:
+          "With the help of Docker, the entire environment for the development of this application was generated, including a MySQL database. " +
+          "The complete project was built with Laravel following the MVC pattern." 
+      },
+      {
+        id: 2,
+        active: false,
+        name: "Models",
+        icon: Table,
+        description:
+          "Tables were controlled through migrations with the Laravel CLI (artisan). Laravel's built-in authentication was used with some tweaks to " +
+          "'users'. Both tables and relationships were modeled using the Eloquent ORM, such as the Post-User, Post-Likes, Post-Comments, and User-Followers relationships." 
+      },
+      {
+        id: 3,
+        active: false,
+        name: "Routes and Controllers",
+        icon: Gears,
+        description:
+          "Controlled routes were created for each action within the app like Login, Create Account, Like Posts, Create Post, etc., along with all logic like " +
+          "validations, password hashing, etc., and also specific view querying methods like viewing the feed " +
+          "or specific posts, following the Laravel documentation."
+      },
+      {
+        id: 4,
+        active: false,
+        name: "Views",
+        icon: Frontend,
+        description:
+          "The page layout and blade components and views were established to display the information provided by the controllers and Eloquent query methods. " +
+          "The Livewire library was implemented for interaction with the like button and different file upload forms. Various Laravel directives to add logic and security " +
+          "to the views. Tailwind was used for styling."
+      },
+
+    ],
+  },
+];
+
+const PROJECTS = lang === 'es' ? PROJECTS_ES : PROJECTS_EN;
 ---
 
 <section
   id="porfolio"
   class="container mx-auto md:max-w-2xl lg:max-w-4xl mb-20"
 >
-  <h2 class="font-bold text-center text-3xl mb-10">Portafolio</h2>
+  <h2 class="font-bold text-center text-3xl mb-10">{t('porfolio.title')}</h2>
   {
     PROJECTS.map((project) => (
       <PorfolioItem key={project.id} project={project} />
